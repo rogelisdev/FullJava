@@ -1,4 +1,4 @@
-package com.codeup.crud_fullstack_angular.infrastructure.dto;
+package com.codeup.crud_fullstack_angular.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

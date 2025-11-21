@@ -2,8 +2,8 @@ package com.codeup.crud_fullstack_angular.infrastructure.controllers;
 
 import com.codeup.crud_fullstack_angular.application.service.ClienteService;
 import com.codeup.crud_fullstack_angular.domain.models.Cliente;
-import com.codeup.crud_fullstack_angular.infrastructure.dto.ClienteRequest;
-import com.codeup.crud_fullstack_angular.infrastructure.dto.ClienteResponse;
+import com.codeup.crud_fullstack_angular.application.dto.ClienteRequest;
+import com.codeup.crud_fullstack_angular.application.dto.ClienteResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
@@ -51,6 +51,9 @@ public class ClienteController {
         return new ResponseEntity<>(crearCliente, HttpStatus.CREATED);
     }
 
+
+
+
     //----------------------- OBTENER POR ID CLIENTES
     @Operation(summary = "Obtener cliente por id", description = "Retorna el cliente con el id especificado")
     @ApiResponses(value = {
@@ -73,6 +76,9 @@ public class ClienteController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+
+
+
     //----------------------- OBTENER TODOS LOS CLIENTES
     @Operation(summary = "obtener todos los clientes", description = "Retornar todos los clientes registrados")
     @ApiResponses(value = {
@@ -85,6 +91,9 @@ public class ClienteController {
         List<Cliente> cliente = servicio.obtenerTodos();
         return new ResponseEntity(cliente, HttpStatus.OK);
     }
+
+
+
 
 
     //----------------------- ACTUALIZAR CLIENTE
@@ -100,6 +109,9 @@ public class ClienteController {
                 .map(c -> new ResponseEntity<>(c, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
+
+
 
     //----------------------- ELIMINAR CLIENTE
     @Operation(summary = "Eliminar cliente", description = "Eliminar un cliente existente por su id")

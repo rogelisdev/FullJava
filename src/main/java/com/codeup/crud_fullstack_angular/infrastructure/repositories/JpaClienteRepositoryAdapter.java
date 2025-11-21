@@ -46,7 +46,8 @@ public class JpaClienteRepositoryAdapter implements ClienteRepositoryPort {
 
     @Override
     public Optional<Cliente> obtenerPorId(Long id) {
-        return jpaClienteRepository.findById(id).map(ClienteEntity::toDomainModel);
+        return jpaClienteRepository.findById(id)
+                .map(ClienteEntity::toDomainModel);
     }
 
     @Override
